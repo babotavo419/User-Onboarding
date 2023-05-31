@@ -58,7 +58,7 @@ function App() {
       submit={handleSubmit} 
       />
       {users.map(user => (
-        <div>
+        <div key={user.id} >
           <p>{user.createdAt}</p>
           <p>{user.email}</p>
         </div>
