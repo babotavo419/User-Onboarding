@@ -9,7 +9,7 @@ const initialFormValues = {
   username: '',
   password: '',
   email: '',
-  tos: false
+  tos: false,
 }
 
 const initialFormErrors = {
@@ -29,8 +29,7 @@ function App() {
       .then(res => {
         setUsers([res.data, ...users])
       
-      })
-      .catch(err => console.log(err))
+      });
   }
 
   const validate = (name, value) => {
@@ -40,13 +39,13 @@ function App() {
       .catch(err => setFormErrors ({...FormErrors, [name]: err.errors[0]}))
       .finally(() => setFormValues(initialFormValues))
   
-
+  }
   const handleChange = (name, value) => {
     validate(name, value);
     setFormValues({
       ...formValues,
       [name]: value
-    })
+    });
   
   }
 
@@ -67,5 +66,5 @@ function App() {
     </div>
   );
 }
-}
+
 export default App;

@@ -18,10 +18,10 @@ const Form = (props) => {
     return (
         <div>
             <h1>My Cool Form</h1>
-            <p>errors.username</p>
-            <p>errors.email</p>
-            <p>errors.password</p>
-            <p>errors.tos</p>
+            <p>{errors.username}</p>
+            <p>{errors.email}</p>
+            <p>{errors.password}</p>
+            <p>{errors.tos}</p>
             <form onSubmit={onSubmit}>
                 <label>Name:
                 <input 
