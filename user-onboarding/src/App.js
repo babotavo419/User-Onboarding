@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-import schema from './components/validation/formSchema';
+import schema from './validation/formSchema';
 import * as yup from 'yup';
 import Form from './components/Form';
 import axios from 'axios';
