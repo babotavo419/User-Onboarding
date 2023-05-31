@@ -26,7 +26,10 @@ function App() {
 
   const handleSubmit = () => {
     axios.post('http://reqres.in/api/users', formValues)
-      .then(res => console.log(res))
+      .then(res => {
+        setUsers([res.data, ...users])
+      
+      })
       .catch(err => console.log(err))
   }
 
@@ -48,7 +51,18 @@ function App() {
 
   return (
     <div className="App">
-      <Form values={formValues} change={handleChange} errors={FormErrors} submit={handleSubmit} />
+      <Form 
+      values={formValues} 
+      change={handleChange} 
+      errors={FormErrors} 
+      submit={handleSubmit} 
+      />
+      {users.map(user => (
+        <div>
+          <p>{user.createdAt}</p>
+          <p>{user.email}</p>
+        </div>
+      ))}
     </div>
   );
 }

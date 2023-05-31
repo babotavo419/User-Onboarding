@@ -13,7 +13,7 @@ const formSchema = yup.object().shape({
     password: yup
         .string()
         .required('Password is required')
-        .min(8, 'Password must be at least 8 characters long')
+        .min(8, 'Password must be at least 8 characters long'),
     tos: yup
         .boolean()
         .oneOf([true], 'You must accept the Terms of Service')
