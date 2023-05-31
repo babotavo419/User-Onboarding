@@ -38,6 +38,7 @@ function App() {
       .validate(value)
       .then(() => setFormErrors ({...FormErrors, [name]: ''}))
       .catch(err => setFormErrors ({...FormErrors, [name]: err.errors[0]}))
+      .finally(() => setFormValues(initialFormValues))
   
 
   const handleChange = (name, value) => {
